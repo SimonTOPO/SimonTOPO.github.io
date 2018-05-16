@@ -34,11 +34,12 @@
         <script src="js/labels.js"></script>
         <script src="js/Control.OSMGeocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/Repere_VilledeParis_NotreDame_final_0.js"></script>
+        <script src="data/4emeArrond_0.js"></script>
+        <script src="data/1erArrond_1.js"></script>
         <script>
         var map = L.map('map', {
-            zoomControl:true, maxZoom:25, minZoom:1
-        }).fitBounds([[48.849370741,2.33314826166],[48.8618829441,2.3677502456]]);
+            zoomControl:true, maxZoom:28, minZoom:10
+        }).fitBounds([[48.849910925,2.3231636997],[48.8693543553,2.37604361081]]);
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
         L.control.locate().addTo(map);
@@ -52,24 +53,15 @@
         var bounds_group = new L.featureGroup([]);
         var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-            maxZoom: 25
+            maxZoom: 28
         });
         basemap0.addTo(map);
         function setBounds() {
         }
-        function pop_Repere_VilledeParis_NotreDame_final_0(feature, layer) {
+        function pop_4emeArrond_0(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>Altitude :</strong><br />' + (feature.properties['Altitude :'] !== null ? Autolinker.link(String(feature.properties['Altitude :'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Coord X :</strong><br />' + (feature.properties['Coord X :'] !== null ? Autolinker.link(String(feature.properties['Coord X :'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Coord Y :</strong><br />' + (feature.properties['Coord Y :'] !== null ? Autolinker.link(String(feature.properties['Coord Y :'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Categorise'] !== null ? Autolinker.link(String(feature.properties['Categorise'])) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>Lien :</strong><br />' + (feature.properties['Lien :'] !== null ? Autolinker.link(String(feature.properties['Lien :'])) : '') + '</td>\
@@ -78,11 +70,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Repere_VilledeParis_NotreDame_final_0_0(feature) {
-            switch(String(feature.properties['Categorise'])) {
+        function style_4emeArrond_0_0(feature) {
+            switch(String(feature.properties['q2wHide_Categorie'])) {
                 case '1':
                     return {
-                pane: 'pane_Repere_VilledeParis_NotreDame_final_0',
+                pane: 'pane_4emeArrond_0',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -92,12 +84,12 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,0,4,1.0)',
+                fillColor: 'rgba(227,0,3,1.0)',
             }
                     break;
                 default:
                     return {
-                pane: 'pane_Repere_VilledeParis_NotreDame_final_0',
+                pane: 'pane_4emeArrond_0',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -107,34 +99,99 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(9,255,91,1.0)',
+                fillColor: 'rgba(22,236,40,1.0)',
             }
                     break;
             }
         }
-        map.createPane('pane_Repere_VilledeParis_NotreDame_final_0');
-        map.getPane('pane_Repere_VilledeParis_NotreDame_final_0').style.zIndex = 400;
-        map.getPane('pane_Repere_VilledeParis_NotreDame_final_0').style['mix-blend-mode'] = 'normal';
-        var layer_Repere_VilledeParis_NotreDame_final_0 = new L.geoJson(json_Repere_VilledeParis_NotreDame_final_0, {
+        map.createPane('pane_4emeArrond_0');
+        map.getPane('pane_4emeArrond_0').style.zIndex = 400;
+        map.getPane('pane_4emeArrond_0').style['mix-blend-mode'] = 'normal';
+        var layer_4emeArrond_0 = new L.geoJson(json_4emeArrond_0, {
             attribution: '<a href=""></a>',
-            pane: 'pane_Repere_VilledeParis_NotreDame_final_0',
-            onEachFeature: pop_Repere_VilledeParis_NotreDame_final_0,
+            pane: 'pane_4emeArrond_0',
+            onEachFeature: pop_4emeArrond_0,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Repere_VilledeParis_NotreDame_final_0_0(feature));
+                return L.circleMarker(latlng, style_4emeArrond_0_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Repere_VilledeParis_NotreDame_final_0);
-        map.addLayer(layer_Repere_VilledeParis_NotreDame_final_0);
+        bounds_group.addLayer(layer_4emeArrond_0);
+        map.addLayer(layer_4emeArrond_0);
+        function pop_1erArrond_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>Altitude :</strong><br />' + (feature.properties['Altitude :'] !== null ? Autolinker.link(String(feature.properties['Altitude :'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Lien :</strong><br />' + (feature.properties['Lien :'] !== null ? Autolinker.link(String(feature.properties['Lien :'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_1erArrond_1_0(feature) {
+            switch(String(feature.properties['q2wHide_Categorie'])) {
+                case '0':
+                    return {
+                pane: 'pane_1erArrond_1',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(22,236,40,1.0)',
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_1erArrond_1',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(227,0,3,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_1erArrond_1');
+        map.getPane('pane_1erArrond_1').style.zIndex = 401;
+        map.getPane('pane_1erArrond_1').style['mix-blend-mode'] = 'normal';
+        var layer_1erArrond_1 = new L.geoJson(json_1erArrond_1, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_1erArrond_1',
+            onEachFeature: pop_1erArrond_1,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_1erArrond_1_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_1erArrond_1);
+        map.addLayer(layer_1erArrond_1);
         var osmGeocoder = new L.Control.OSMGeocoder({
             collapsed: false,
             position: 'topright',
             text: 'Search',
         });
         osmGeocoder.addTo(map);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'1er Arrond<br /><table><tr><td style="text-align: center;"><img src="legend/1erArrond_1_0.png" /></td><td></td></tr><tr><td style="text-align: center;"><img src="legend/1erArrond_1_1.png" /></td><td></td></tr></table>': layer_1erArrond_1,'4eme Arrond<br /><table><tr><td style="text-align: center;"><img src="legend/4emeArrond_0_0.png" /></td><td></td></tr><tr><td style="text-align: center;"><img src="legend/4emeArrond_0_1.png" /></td><td></td></tr></table>': layer_4emeArrond_0,}).addTo(map);
         setBounds();
         </script>
     </body>
